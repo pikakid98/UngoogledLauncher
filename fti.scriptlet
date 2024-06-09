@@ -1,7 +1,7 @@
 ﻿#Requires Autohotkey v2.0
 
-if not FileExist("user.ini") {
-    IniWrite "", "user.ini", "Args", "Args"
+if not FileExist(A_ScriptDir "\user.ini") {
+    IniWrite "", A_ScriptDir "\user.ini", "Args", "Args"
 }
 
 if not DirExist(A_ScriptDir "\App") {
@@ -12,19 +12,19 @@ if not DirExist(A_ScriptDir "\UserData") {
     DirCreate A_ScriptDir "\UserData"
 }
 
-if not DirExist("App")
+if not DirExist(A_ScriptDir "\App")
 {
-    if FileExist("chrome.exe")
+    if FileExist(A_ScriptDir "\chrome.exe")
     {
-        UGCPath := "chrome.exe"
+        UGCPath := A_ScriptDir "\chrome.exe"
     } else {
         Run "explorer.exe" " " "https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/"
         ExitApp
     }
 } else {
-    if FileExist("App\chrome.exe")
+    if FileExist(A_ScriptDir "\App\chrome.exe")
     {
-        UGCPath := "App\chrome.exe"
+        UGCPath := A_ScriptDir "\App\chrome.exe"
     } else {
         Run "explorer.exe" " " "https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/"
         ExitApp
@@ -33,5 +33,5 @@ if not DirExist("App")
 
 if not FileExist(A_ScriptDir "\UserData\fti.txt") {
     FileAppend "", A_ScriptDir "\UserData\fti.txt"
-    RunWait UGCPath " " "--user-data-dir=" A_ScriptDir "\UserData --extension-mime-request-handling=always-prompt-for-install" " " "https://github.com/NeverDecaf/chromium-web-store/releases/latest/download/Chromium.Web.Store.crx"
+    RunWait UGCPath " " "--user-data-dir=" '"' A_ScriptDir "\UserData" '"' " --extension-mime-request-handling=always-prompt-for-install" " " "https://github.com/NeverDecaf/chromium-web-store/releases/latest/download/Chromium.Web.Store.crx"
 }
