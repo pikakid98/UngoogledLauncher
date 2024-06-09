@@ -1,8 +1,8 @@
 ﻿#Requires Autohotkey v2.0
 #NoTrayIcon
 
-;@Ahk2Exe-Set FileVersion, 1.0.1
-;@Ahk2Exe-Set ProductVersion, 1.0.1.0
+;@Ahk2Exe-Set FileVersion, 1.0.1.1
+;@Ahk2Exe-Set ProductVersion, 1.0.1.1
 ;@Ahk2Exe-Set CompanyName, Pikakid98
 
 if not FileExist("user.ini") {

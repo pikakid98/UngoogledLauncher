@@ -1,1 +1,1 @@
-"%AHK%\Compiler\Ahk2Exe.exe" /in "Ungoogled Chromium Portable.ahk" /out "Output\UngoogledChromiumPortable.exe" /icon "icon.ico" /compress 2 /base "%AHK%\v2\AutoHotkey64.exe"
+"%AHK%\Compiler\Ahk2Exe.exe" /in "UngoogledLauncher.ahk" /out "Output\UngoogledLauncher.exe" /icon "icon.ico" /compress 2 /base "%AHK%\v2\AutoHotkey64.exe"
